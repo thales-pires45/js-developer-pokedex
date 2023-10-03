@@ -1,12 +1,13 @@
-
 const pokeApi = {}
 
+//Retornar nosso pokemon de pokemon-model
 function convertPokeApiDetailToPokemon(pokeDetail) {
     const pokemon = new Pokemon()
     pokemon.number = pokeDetail.id
     pokemon.name = pokeDetail.name
 
     const types = pokeDetail.types.map((typeSlot) => typeSlot.type.name)
+    //[type] tem a mesma esquivalencia pokemon.types.get(0), get(1,), get(2)...
     const [type] = types
 
     pokemon.types = types
